@@ -21,7 +21,7 @@ class DefaultBottomNavBar extends StatelessWidget {
       margin: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0.r),
+        borderRadius: BorderRadius.circular(20.0),
       ),
       child: BottomNavyBar(
         backgroundColor: Colors.grey[200],
@@ -47,6 +47,14 @@ class DefaultBottomNavBar extends StatelessWidget {
               Icons.person_outlined,
             ),
             title: const Text('My Profile', textAlign: TextAlign.center),
+          ),
+          BottomNavyBarItem(
+            inactiveColor: unselectedItemColor,
+            activeColor: selectedItemColor!,
+            icon: const Icon(
+              Icons.settings,
+            ),
+            title: const Text('Settings', textAlign: TextAlign.center),
           ),
 
         ],

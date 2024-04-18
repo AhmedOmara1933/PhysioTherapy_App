@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../layout/home_layout.dart';
 
@@ -11,7 +10,7 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 0.0.h,
+        toolbarHeight: 0.0,
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -27,7 +26,7 @@ class IntroPage extends StatelessWidget {
                 Text(
                   'Physio Therapy',
                   style: GoogleFonts.beauRivage(
-                      fontSize: 62.0.sp, fontWeight: FontWeight.w400),
+                      fontSize: 62.0, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -36,10 +35,10 @@ class IntroPage extends StatelessWidget {
                 bottom: 60.0,
                 right: 250.0,
               ),
-              height: 100.0.h,
-              width: 100.0.w,
+              height: 100.0,
+              width: 100.0,
               decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(300.0.r)),
+                  BoxDecoration(borderRadius: BorderRadius.circular(300.0)),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: MaterialButton(
                 color: const Color(0xff00bead),
@@ -55,7 +54,7 @@ class IntroPage extends StatelessWidget {
                   style: GoogleFonts.bevan(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 30.0.sp),
+                      fontSize: 30.0),
                 ),
               ),
             ),

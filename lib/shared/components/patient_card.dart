@@ -19,7 +19,7 @@ class PatientCard extends StatelessWidget {
         width: double.infinity,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30.0.r),
+          borderRadius: BorderRadius.circular(30.0),
           color: const Color(0xff00bead),
         ),
         child: Padding(
@@ -47,7 +47,7 @@ class PatientCard extends StatelessWidget {
                     ],
                   ),
                    SizedBox(
-                    width: 10.0.w,
+                    width: 10.0,
                   ),
                   Expanded(
                     child: Column(
@@ -55,7 +55,7 @@ class PatientCard extends StatelessWidget {
                         Text(
                           '${model.name}',
                           style: GoogleFonts.belleza(
-                              fontSize: 30.0.sp,
+                              fontSize: 30.0,
                               color: Colors.white,
                               fontWeight: FontWeight.w900),
                           maxLines: 2,
@@ -63,18 +63,18 @@ class PatientCard extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                          SizedBox(
-                          height: 10.0.h,
+                          height: 10.0,
                         ),
                         Container(
                          padding: EdgeInsets.only(bottom: 7.0,top:5.0,left: 2.0,right: 2.0),
                           width: double.infinity,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30.0.r),
+                              borderRadius: BorderRadius.circular(30.0),
                               color: Colors.white),
                           child: Text(
                             '${model.date}',
                             style: GoogleFonts.belleza(
-                              fontSize: 20.0.sp,
+                              fontSize: 20.0,
                               color: Colors.black,
                               fontWeight: FontWeight.w900,
                             ),
@@ -87,11 +87,11 @@ class PatientCard extends StatelessWidget {
                 ],
               ),
               Container(
-                height: 50.0.h,
+                height: 50.0,
                 decoration: BoxDecoration(
                     color: Colors.blue[100],
-                    borderRadius: BorderRadius.circular(30.0.r),
-                    border: Border.all(width: 1.5.w, color: Colors.white)),
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(width: 1.5, color: Colors.white)),
                 margin: const EdgeInsets.symmetric(vertical: 10.0),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -100,13 +100,13 @@ class PatientCard extends StatelessWidget {
                       Text(
                         'Patient Doctor / ',
                         style: GoogleFonts.belleza(
-                            fontSize: 21.0.sp, fontWeight: FontWeight.w900),
+                            fontSize: 21.0, fontWeight: FontWeight.w900),
                       ),
                       Expanded(
                         child: Text(
                           '${model.doctor}',
                           style: GoogleFonts.belleza(
-                              fontSize: 15.0.sp, fontWeight: FontWeight.w900),
+                              fontSize: 15.0, fontWeight: FontWeight.w900),
                         ),
                       ),
                     ],
@@ -114,11 +114,11 @@ class PatientCard extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 250.0.h,
+                height: 250.0,
                 decoration: BoxDecoration(
                     color: Colors.blue[100],
-                    borderRadius: BorderRadius.circular(30.0.r),
-                    border: Border.all(width: 1.5.w, color: Colors.white)),
+                    borderRadius: BorderRadius.circular(30.0),
+                    border: Border.all(width: 1.5, color: Colors.white)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Center(
@@ -130,7 +130,7 @@ class PatientCard extends StatelessWidget {
                             child: Text(
                               '${model.History}',
                               style: GoogleFonts.belleza(
-                                  fontSize: 20.0.sp,
+                                  fontSize: 20.0,
                                   fontWeight: FontWeight.w900,
                                   letterSpacing: 1.0),
                               textAlign: TextAlign.center,

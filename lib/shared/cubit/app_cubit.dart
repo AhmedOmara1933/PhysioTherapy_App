@@ -1,13 +1,13 @@
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:physio_therapy/modules/patient_page.dart';
+import 'package:physio_therapy/modules/setting_page.dart';
 import 'package:sqflite/sqflite.dart';
 import '../../models/model.dart';
 import '../../modules/profile_page.dart';
-import '../../modules/setting_page.dart';
-import '../components/patientFormField.dart';
 part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
@@ -27,10 +27,27 @@ class AppCubit extends Cubit<AppState> {
   var patientHistory = TextEditingController();
   var searchNationalId = TextEditingController();
   var passport = TextEditingController();
+  File? image;
+  final imagePicker = ImagePicker();
+
   List<Widget> screans = [
     const PatientPage(),
     const ProfilePage(),
+    SettingPage()
   ];
+
+  uploadCameraImage() async {
+    await imagePicker.pickImage(source: ImageSource.camera).then((value) {
+      if (value != null) {
+        image = File(value.path);
+        emit(ImagePickerSuccessState(image: image!));
+      } else {
+        emit(ImagePickerCanceledState());
+      }
+    }).catchError((error) {
+      emit(ImagePickerErrorState(error: error.toString()));
+    });
+  }
 
   //todo//////////////////////// changeBottomNavBar/////////////////////////////////
   int currentIndex = 0;
@@ -56,7 +73,7 @@ class AppCubit extends Cubit<AppState> {
 //todo//////////////////////////sqflite database///////////////////////////////
 
   Database? database;
-  List <PatientModel> patient=[];
+  List<PatientModel> patient = [];
 
   void createDataBase() {
     openDatabase('physiotherapy.db', version: 3, onCreate: (database, version) {
@@ -99,31 +116,28 @@ class AppCubit extends Cubit<AppState> {
     });
   }
 
-  void getFromDatabase(database,text) async {
+  void getFromDatabase(database, text) async {
     await database!.rawQuery('SELECT *FROM patients').then((value) {
-     patient= List<PatientModel>.from((value as List).map((e) => PatientModel.fromJson(e)));
+      patient = List<PatientModel>.from(
+          (value as List).map((e) => PatientModel.fromJson(e)));
       print(patient);
-     searchIntoList(searchText: text);
+      searchIntoList(searchText: text);
       emit(AppGetFromDatabase());
     });
   }
 
-
-
   PatientModel? searchModel;
-  searchIntoList({required String searchText}){
+
+  searchIntoList({required String searchText}) {
     patient.forEach((element) {
-      if(searchText==element.passport){
-      searchModel=element;
+      if (searchText == element.passport) {
+        searchModel = element;
       }
     });
     emit(SearchSuccessState());
   }
 
-
-
-  void deleteDatabase(
-      {required String id}) async {
+  void deleteDatabase({required String id}) async {
     await database!
         .rawDelete('DELETE FROM patients WHERE id = ?', [id]).then((value) {
       //getFromDatabase(database,"");

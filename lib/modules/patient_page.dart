@@ -1,7 +1,6 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import '../shared/components/patientFormField.dart';
 import '../shared/components/patient_card.dart';
@@ -21,14 +20,14 @@ class PatientPage extends StatelessWidget {
         var cubit=AppCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            toolbarHeight: 140.0.h,
+            toolbarHeight: 140.0,
             title: Form(
               key:cubit.formKey2,
               child: Column(
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0.r),
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
                     child: PatientFormField(
                         keyboardType: TextInputType.phone,
@@ -41,7 +40,7 @@ class PatientPage extends StatelessWidget {
                           return null;
                         },
                         prefixicon: Icons.key,
-                        radius: 50.0.r,
+                        radius: 50.0,
                         text: 'Enter Your National Id',
                         controller:cubit. searchNationalId),
                   ),
@@ -72,7 +71,7 @@ class PatientPage extends StatelessWidget {
           body: LiquidPullToRefresh(
             color: Colors.white,
             backgroundColor: const Color(0xff00bead),
-            height: 300.0.h,
+            height: 300.0,
             animSpeedFactor: 2,
             onRefresh: ()async{
               cubit.getFromDatabase(cubit.database,cubit.searchNationalId.text);
