@@ -33,7 +33,6 @@ class AppCubit extends Cubit<AppState> {
   List<Widget> screans = [
     const PatientPage(),
     const ProfilePage(),
-    SettingPage()
   ];
 
   uploadCameraImage() async {

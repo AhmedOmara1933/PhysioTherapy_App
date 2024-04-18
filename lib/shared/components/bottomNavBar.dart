@@ -48,15 +48,6 @@ class DefaultBottomNavBar extends StatelessWidget {
             ),
             title: const Text('My Profile', textAlign: TextAlign.center),
           ),
-          BottomNavyBarItem(
-            inactiveColor: unselectedItemColor,
-            activeColor: selectedItemColor!,
-            icon: const Icon(
-              Icons.settings,
-            ),
-            title: const Text('Settings', textAlign: TextAlign.center),
-          ),
-
         ],
       ),
     );

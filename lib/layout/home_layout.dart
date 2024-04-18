@@ -30,6 +30,7 @@ class HomeLayout extends StatelessWidget {
               cubit.changeBottomNavBar(index: value);
             },
           ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           floatingActionButton: Container(
             width: 70.0,
             height: 70.0,

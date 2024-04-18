@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,72 +80,65 @@ class ProfilePage extends StatelessWidget {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                child: SingleChildScrollView(
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 30.0, left: 20.0, right: 20.0, bottom: 20.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40.0),
-                        topRight: Radius.circular(40.0),
-                      ),
-                      border: Border.all(
-                        color: Colors.black.withOpacity(0.1)
-                      ),
-                      color: Colors.white,
+                child: Container(
+                  padding: const EdgeInsets.only(
+                      top: 30.0, left: 20.0, right: 20.0, bottom: 20.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40.0),
+                      topRight: Radius.circular(40.0),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: double.infinity,
-                          child: Text(
-                            'DR / Ahmed Omara',
-                            style: GoogleFonts.benne(
-                                fontWeight: FontWeight.bold, fontSize: 30.0),
-                            textAlign: TextAlign.center,
-                          ),
+                    color: Colors.white,
+                  ),
+                  child: ListView(
+                    children: [
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          'DR / Ahmed Omara',
+                          style: GoogleFonts.benne(
+                              fontWeight: FontWeight.bold, fontSize: 30.0),
+                          textAlign: TextAlign.center,
                         ),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 10.0),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                  child: Image.asset(
-                                'images/google.png',
-                                height: 50.0,
-                                width: 50.0,
-                              )),
-                              Expanded(
-                                  child: Image.asset(
-                                'images/facebook.png',
-                                height: 50.0,
-                                width: 50.0,
-                              )),
-                              Expanded(
-                                  child: Image.asset(
-                                'images/twitter.png',
-                                height: 50.0,
-                                width: 50.0,
-                              )),
-                              Expanded(
-                                  child: Image.asset(
-                                'images/instagram.png',
-                                height: 50.0,
-                                width: 50.0,
-                              )),
-                            ],
-                          ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 10.0),
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: Image.asset(
+                              'images/google.png',
+                              height: 50.0,
+                              width: 50.0,
+                            )),
+                            Expanded(
+                                child: Image.asset(
+                              'images/facebook.png',
+                              height: 50.0,
+                              width: 50.0,
+                            )),
+                            Expanded(
+                                child: Image.asset(
+                              'images/twitter.png',
+                              height: 50.0,
+                              width: 50.0,
+                            )),
+                            Expanded(
+                                child: Image.asset(
+                              'images/instagram.png',
+                              height: 50.0,
+                              width: 50.0,
+                            )),
+                          ],
                         ),
-                        Text(
-                          'Loream ipsum dolor sit amet consecrate.Dais\n'
-                          'portion purus qualm dais molester non rises\n'
-                          'purus deque. ipsum lacks id....',
-                          style: TextStyle(color: Colors.black54, fontSize: 16.0),
-                        ),
-                      ],
-                    ),
+                      ),
+                      Text(
+                        'Loream ipsum dolor sit amet consecrate.Dais\n'
+                        'portion purus qualm dais molester non rises\n'
+                        'purus deque. ipsum lacks id....',
+                        style: TextStyle(color: Colors.black54, fontSize: 16.0),
+                      ),
+                    ],
                   ),
                 ),
               ),
